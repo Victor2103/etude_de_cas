@@ -1,1 +1,1 @@
-# Moteur de recherches d'images grâce à des requêtes textuelles
+#  Un moteur de  recherche des   images avec    des   requêtes textuelles.
