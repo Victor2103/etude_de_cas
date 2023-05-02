@@ -16,19 +16,22 @@ coco_dataset = foz.load_zoo_dataset(
     split="validation",
     dataset_dir=path
 )
-coco_dataset.persistent = False
+coco_dataset.persistent = True
 
 model = foz.load_zoo_model("clip-vit-base32-torch")
 
 coco_dataset.apply_model(model)
 
 # Index ground truth objects by similarity
-object_index = fob.compute_similarity(
+try:
+    object_index = fob.compute_similarity(
     coco_dataset,
     patches_field="ground_truth",
     model="clip-vit-base32-torch",
     brain_key="gt_sim",
 )
+except Exception as e:
+    pass
 
 
 

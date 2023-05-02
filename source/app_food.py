@@ -32,13 +32,16 @@ model = foz.load_zoo_model(
 
 food_dataset.apply_model(model)
 
-# Index ground truth objects by similarity
-object_index = fob.compute_similarity(
-    food_dataset,
-    patches_field="ground_truth",
-    model="clip-vit-base32-torch",
-    brain_key="gt_sim",
-)
+try:
+    # Index ground truth objects by similarity
+    object_index = fob.compute_similarity(
+        food_dataset,
+        patches_field="ground_truth",
+        model="clip-vit-base32-torch",
+        brain_key="gt_sim",
+    )
+except Exception as e:
+    pass
 
 
 
