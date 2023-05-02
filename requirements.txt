@@ -1,3 +1,6 @@
-transformers
-torch
 fiftyone
+
+torch
+torchvision
+
+transformers
