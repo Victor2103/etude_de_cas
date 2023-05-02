@@ -7,13 +7,16 @@ path = 'data/food-101'
 if not(os.path.exists(path)):
     os.system('bash scripts/food_data.sh')
 
-# Create the food dataset
-food_dataset = fo.Dataset.from_dir(
-    dataset_dir="data/food-101/images",
-    dataset_type=fo.types.ImageClassificationDirectoryTree,
-    name="Food Dataset",
-)
-food_dataset.persistent = True
+try:
+    # Create the food dataset
+    food_dataset = fo.Dataset.from_dir(
+        dataset_dir="data/food-101/images",
+        dataset_type=fo.types.ImageClassificationDirectoryTree,
+        name="Food Dataset",
+    )
+    food_dataset.persistent = True
+except:
+    pass
 
 """from PIL import Image
 import requests

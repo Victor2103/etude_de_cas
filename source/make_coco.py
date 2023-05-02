@@ -10,7 +10,6 @@ except Exception as e:
 coco_dataset = foz.load_zoo_dataset(
     "coco-2017", 
     split="validation",
-    dataset_name="COCO dataset",
-    dataset_dir="data"
+    dataset_dir="data/coco-2017"
 )
-coco_dataset.persistent = True
+coco_dataset.persistent = False
